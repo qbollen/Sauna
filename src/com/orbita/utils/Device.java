@@ -1,4 +1,4 @@
-package com.orbita;
+package com.orbita.utils;
 
 public class Device
 {
