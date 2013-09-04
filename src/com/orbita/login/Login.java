@@ -30,14 +30,14 @@ public class Login extends JFrame
 		setBounds(300, 200, panel.getWidth(), panel.getHeight());
 		userLabel = new JLabel();
 		userLabel.setText("User Name:");
-		userLabel.setBounds(100, 135, 200, 25);
+		userLabel.setBounds(150, 135, 200, 25);
 		panel.add(userLabel);
 		final JTextField userName = new JTextField();
-		userName.setBounds(180,135,150,25);
+		userName.setBounds(230,135,150,25);
 		panel.add(userName);	
 	    passLabel = new JLabel();
 	    passLabel.setText("Password:");
-	    passLabel.setBounds(100, 165, 200, 25);
+	    passLabel.setBounds(150, 165, 200, 25);
 	    panel.add(passLabel);
 	    final JPasswordField userPassword = new JPasswordField();
 	    userPassword.addKeyListener(new KeyAdapter()
@@ -50,7 +50,7 @@ public class Login extends JFrame
 					login.doClick();
 			}
 	    });
-		userPassword.setBounds(180, 165, 150, 25);
+		userPassword.setBounds(230, 165, 150, 25);
 		panel.add(userPassword);
 		login = new JButton();
 		login.addActionListener(new ActionListener()
@@ -66,7 +66,7 @@ public class Login extends JFrame
 			}
 		});
 		login.setText("Login");
-		login.setBounds(150, 200, 80, 25);
+		login.setBounds(200, 200, 80, 25);
 		panel.add(login);
 		exit = new JButton();
 		exit.addActionListener(new ActionListener()
@@ -79,7 +79,7 @@ public class Login extends JFrame
 			}
 		});
 		exit.setText("Exit");;
-		exit.setBounds(250, 200, 80, 25);
+		exit.setBounds(300, 200, 80, 25);
 		panel.add(exit);
 		setVisible(true);
 		setResizable(false);
