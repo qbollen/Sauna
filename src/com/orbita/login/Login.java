@@ -15,7 +15,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import model.TbUser;
+
 import com.orbita.SaunaFrame;
+import com.orbita.dao.Dao;
 
 public class Login extends JFrame
 {
@@ -23,6 +26,7 @@ public class Login extends JFrame
 	private JLabel passLabel;
 	private JButton exit;
 	private JButton login;
+	private static TbUser user;
 	
 	public Login()
 	{
@@ -64,10 +68,17 @@ public class Login extends JFrame
 		{
 
 			@Override
-			public void actionPerformed(ActionEvent arg0)
+			public void actionPerformed(final ActionEvent e)
 			{
 				// TODO Auto-generated method stub
-				
+				String pwd = new String(userPassword.getPassword());
+				user = Dao.getUser(userName.getText(),pwd);
+				if (user.getUsername() == null || user.getUserpwd() == null)
+				{	
+					userName.setText(null);
+					userPassword.setText(null);
+					return;
+				}
 				setVisible(false);
 				new SaunaFrame();
 			}
