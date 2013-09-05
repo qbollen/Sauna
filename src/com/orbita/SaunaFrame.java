@@ -3,6 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -39,6 +40,7 @@ public class SaunaFrame
 		frame.getContentPane().setLayout(new BorderLayout());
 		frame.setBounds(100,100,800,600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		toolBar = new JToolBar();
 		toolBar.setBackground(new Color(170, 188, 120));
@@ -133,7 +135,7 @@ public class SaunaFrame
 			int backh = frame.getHeight();
 			backLabel.setSize(backw, backh);
 			backLabel.setText("<html><body><img width='" + backw
-					+ "' height='" + (backh - 90) + "' src="
+					+ "' height='" + (backh - 80) + "' src="
 					+ SaunaFrame.this.getClass().getResource("welcome.jpg")
 					+ "'></img></body></html>");
 		}

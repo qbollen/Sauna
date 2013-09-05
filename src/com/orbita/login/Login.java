@@ -1,9 +1,12 @@
 package com.orbita.login;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,6 +31,10 @@ public class Login extends JFrame
 		panel.setLayout(null);
 		getContentPane().add(panel);
 		setBounds(300, 200, panel.getWidth(), panel.getHeight());
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		int screenX = screen.width / 2;
+		int screenY = screen.height / 2;
+		setLocation(screenX - getWidth() / 2, screenY - getHeight() / 2);
 		userLabel = new JLabel();
 		userLabel.setText("User Name:");
 		userLabel.setBounds(150, 135, 200, 25);
